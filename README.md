@@ -58,7 +58,7 @@ contract fundMe2{
     // address of the owner of the contract
     address public owner;
 
-    // total amount of fund raised
+    // track total amount of fund raised
     uint256 public totalFund;
 
     // mapping to store contributions amount of address
@@ -91,6 +91,8 @@ contract fundMe2{
 
 }
 ```
+___
+## fundMe3
 
 
 
