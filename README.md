@@ -92,7 +92,54 @@ contract fundMe2{
 }
 ```
 ___
-## fundMe3
+## fundMe3 Advanced
+#### I take this contract example from patric collins course
+#### First we start with two main function 
+![Main Two Function](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/9636e19e-617c-41e1-ba14-e24485ae0e2d)
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.23;
+contract fundMe3{
+
+    /*  1- Function allow user to send money 
+
+    */
+    function fund() public {
+        
+    }
+
+    function withdraw() public{
+
+    }
+}
+```
+### 1- We have to make fund function to recieve and sent ethereum to do that we use payable keyword
+### 2- user should be send 1 ether at least we use require to do that
+### 3- the require statement has the power to control the behavior of the transaction
+### 4- soldity have global variable like (msg.value) number of wei send with transaction
+### 5- 1ehereum = 1e18 wei [site converter](https://eth-converter.com/)
+![fun function](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/af9ea70a-a675-4c9d-a496-52df1ea02b4a)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.23;
+contract fundMe3{
+
+    function fund() public payable {
+        require (msg.value>=1e18,"you have to send at least 1 eth")
+        
+    }
+
+    function withdraw() public{
+
+    }
+}
+```
+
+
+ 
 
 
 
