@@ -192,6 +192,70 @@ contract fundMe3{
  ### 1- Chainlink Data Feeds sepolia testnet address [0x694AA1769357215DE4FAC081bf1f309aDC325306](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=)
 ### 2- [AggregatorV3Intrerface](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol)
 
+![Solidity interface  A Mode of interaction ](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/0d00e1f7-0f94-45cb-b747-7ea80b47b9f0)
+### 1- Copy the Aggregator V3 Interface from Chainlink's GitHub
+### 2- The interface allows us to call these functions on the contract without needing the contract code
+### 3- This interface is what we need to interact with the contract for our task
+### 4- It contains the getVersion() function, among others
+### 5- Aggregator to interact with the Chainlink Price Feed contract and retrieve the current version.
+
+```solidity
+
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.23;
+interface AggregatorV3Interface {
+
+  function decimals() external view returns (uint8);
+
+  function description()external view returns (string memory );
+
+  function version() external view returns ( uint256  );
+
+  function getRoundData(uint80 _roundId ) external view  
+  returns (
+      uint80 roundId,
+      int256 answer,
+      uint256 startedAt,
+      uint256 updatedAt,
+      uint80 answeredInRound
+    );
+
+  function latestRoundData()external view
+    returns (
+      uint80 roundId,
+      int256 answer,
+      uint256 startedAt,
+      uint256 updatedAt,
+      uint80 answeredInRound
+    );
+
+}
+
+contract fundMe3{
+    uint256 minimumUsd=5;
+
+    function fund() public payable {
+        require (msg.value>=minimumUsd,"you have to send at least 1 eth");
+        
+    }
+
+    function withdraw() public{
+
+    }
+
+    function getPrice() public{
+
+    }
+
+    function getConversionRate() public{
+
+    }
+
+    function getVersion() public view returns(uint256){
+        return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
+    }
+}
+```
 
 
 
