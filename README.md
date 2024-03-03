@@ -137,7 +137,7 @@ contract fundMe3{
     }
 }
 ```
-### 1- replace minimum fund from 1 eth to 5 doller
+### 1- replace minimum fund from 1 eth to 5 dollar
 ```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.23;
@@ -154,6 +154,46 @@ contract fundMe3{
     }
 }
 ```
+![Convert eth to usd](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/c40c85aa-f66a-42c2-8b09-f4ac45ab1ebc)
+
+
+### 1- how to convert ethereum to dollar using chainlink data feeds
+### 2- This conversion requires us to identify the price of Ethereum
+### 3- chainlink [data feeds](https://docs.chain.link/data-feeds/using-data-feeds)
+### 4- chainlink Price feeds [address](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=)
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.23;
+
+contract fundMe3{
+    uint256 minimumUsd=5;
+
+    function fund() public payable {
+        require (msg.value>=minimumUsd,"you have to send at least 1 eth");
+        
+    }
+
+    function withdraw() public{
+
+    }
+
+    function getPrice() public{
+
+    }
+
+    function getConversionRate() public{
+
+    }
+}
+```
+ ![solidity interface](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/b161217b-ae12-4a12-8004-7feae51f1625)
+
+ ### 1- Chainlink Data Feeds sepolia testnet address [0x694AA1769357215DE4FAC081bf1f309aDC325306](https://docs.chain.link/data-feeds/price-feeds/addresses?network=ethereum&page=1&search=)
+### 2- [AggregatorV3Intrerface](https://github.com/smartcontractkit/chainlink/blob/develop/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol)
+
+
+
 
 
 
