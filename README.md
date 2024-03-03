@@ -120,7 +120,7 @@ contract fundMe3{
 ### 3- the require statement has the power to control the behavior of the transaction
 ### 4- soldity have global variable like (msg.value) number of wei send with transaction
 ### 5- 1ehereum = 1e18 wei [site converter](https://eth-converter.com/)
-![fun function](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/af9ea70a-a675-4c9d-a496-52df1ea02b4a)
+![fund function](https://github.com/Mahmoud-Mourad-Dev/FundMe/assets/35864731/ea777bbb-5958-43a2-bca9-c2d85d6a1952)
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -128,7 +128,7 @@ pragma solidity 0.8.23;
 contract fundMe3{
 
     function fund() public payable {
-        require (msg.value>=1e18,"you have to send at least 1 eth")
+        require (msg.value>=1e18,"you have to send at least 1 eth");
         
     }
 
@@ -137,6 +137,24 @@ contract fundMe3{
     }
 }
 ```
+### 1- replace minimum fund from 1 eth to 5 doller
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.23;
+contract fundMe3{
+    uint256 minimumUsd=5;
+
+    function fund() public payable {
+        require (msg.value>=minimumUsd,"you have to send at least 1 eth");
+        
+    }
+
+    function withdraw() public{
+
+    }
+}
+```
+
 
 
  
